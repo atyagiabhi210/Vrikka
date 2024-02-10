@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vrikka/login/screens/logInPage.dart';
+import 'package:vrikka/onboarding/onboarding.dart';
 import 'package:vrikka/theme/lighttheme.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,10 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: lightMode,
-      home: LogInPage(),
+      debugShowCheckedModeBanner: false,
+      home: const OnBoardingScreen(),
     );
   }
 }
-
-
-
