@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vrikka/login/screens/logInPage.dart';
 import 'package:vrikka/onboarding/onboarding.dart';
 import 'package:vrikka/theme/lighttheme.dart';
-import 'package:vrikka/welcome_screen/screens/welcome_page.dart';
 
 
 void main() async {
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: lightMode,
       debugShowCheckedModeBanner: false,
 
-      home:const WelcomePage(),
+      home:OnBoardingView(),
     );
   }
 }

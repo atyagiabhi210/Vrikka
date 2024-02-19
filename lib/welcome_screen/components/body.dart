@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vrikka/login/screens/log_in_screen.dart';
 import 'package:vrikka/signup/screens/signupscreen.dart';
 import 'package:vrikka/welcome_screen/components/background.dart';
@@ -21,13 +20,15 @@ class Body extends StatelessWidget {
             "Welcome to Vrikka",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          SvgPicture.asset("assets/icons/chat.svg", height: size.height * 0.4),
+          //SvgPicture.asset("assets/icons/chat.svg", height: size.height * 0.4),
+          Image.asset("assets/images/on_boarding_images/Online Doctor-rafiki.png",
+              height: size.height * 0.4),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                      Theme.of(context).primaryColorLight),
+                      Theme.of(context).colorScheme.tertiary),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(29)))),
               onPressed: () {
@@ -47,7 +48,7 @@ class Body extends StatelessWidget {
               
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(Theme.of(context).primaryColor),
+                      MaterialStateProperty.all(Theme.of(context).colorScheme.tertiary),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(29)))),
               onPressed: () {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vrikka/signup/components/background.dart';
+import 'package:vrikka/signup/member/screens/memberscreen.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -19,7 +19,9 @@ class SignUp extends StatelessWidget {
             alignment: Alignment.center,
             child:Text( "SIGNUP", style: TextStyle(fontWeight: FontWeight.bold,)) ,
           ),
-          SvgPicture.asset("assets/icons/signup.svg", height: size.height * 0.4),
+          //SvgPicture.asset("assets/icons/signup.svg", height: size.height * 0.4),
+          Image.asset("assets/images/on_boarding_images/Eating healthy food-pana.png",
+              height: size.height * 0.4),
           SizedBox(
               height: size.height * 0.02,
             ),
@@ -27,14 +29,19 @@ class SignUp extends StatelessWidget {
               
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(Theme.of(context).primaryColor),
+                      MaterialStateProperty.all(Theme.of(context).colorScheme.tertiary),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(29)))),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                MaterialPageRoute(builder:  (context) => MemberSignUpScreen()));
+
+              },
               child: const Text(
                 "Member",
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+
               ),
             ),
             SizedBox(
@@ -44,7 +51,7 @@ class SignUp extends StatelessWidget {
               
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(Theme.of(context).primaryColor),
+                      MaterialStateProperty.all(Theme.of(context).colorScheme.tertiary),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(29)))),
               onPressed: () {},
