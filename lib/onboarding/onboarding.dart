@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vrikka/utils/constants/image_strings.dart';
+
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
