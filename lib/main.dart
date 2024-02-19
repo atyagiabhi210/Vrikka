@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vrikka/login/screens/logInPage.dart';
+import 'package:sizer/sizer.dart';
 import 'package:vrikka/onboarding/onboarding.dart';
+import 'package:vrikka/reminder/reminder_homepage.dart';
 import 'package:vrikka/theme/lighttheme.dart';
 import 'package:vrikka/welcome_screen/screens/welcome_page.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,12 +22,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: lightMode,
-      debugShowCheckedModeBanner: false,
-
-      home:const WelcomePage(),
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: lightMode,
+          debugShowCheckedModeBanner: false,
+          home: onboarding ? const OnBoardingView() : const ReminderHomePage(),
+        );
+      },
     );
   }
 }

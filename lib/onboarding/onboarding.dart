@@ -1,11 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:vrikka/login/screens/logInPage.dart';
 import 'package:vrikka/onboarding/onboarding_items.dart';
+import 'package:vrikka/reminder/reminder_homepage.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -22,7 +22,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     super.initState();
@@ -126,8 +125,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           pres.setBool("onboarding", true);
 
           if (!mounted) return;
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const LogInPage()));
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ReminderHomePage()));
         },
         child: const Text(
           "Get Started",
