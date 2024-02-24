@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vrikka/auth.dart';
 import 'package:vrikka/signup/components/background.dart';
-import 'package:vrikka/signup/member/screens/memberscreen.dart';
+import 'package:vrikka/signup/member_signup/member_signup.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -34,7 +35,7 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(29)))),
               onPressed: () {
                 Navigator.push(context,
-                MaterialPageRoute(builder:  (context) => MemberSignUpScreen()));
+                MaterialPageRoute(builder:  (context) => AuthPage()));
 
               },
               child: const Text(
